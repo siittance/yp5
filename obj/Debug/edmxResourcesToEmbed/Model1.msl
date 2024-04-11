@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище PetShopYP5ModelContainer" CdmEntityContainer="PetShopYP5Entities1">
+    <EntitySetMapping Name="Bill">
+      <EntityTypeMapping TypeName="PetShopYP5Model.Bill">
+        <MappingFragment StoreEntitySet="Bill">
+          <ScalarProperty Name="ID_Bill" ColumnName="ID_Bill" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="DateOrder" ColumnName="DateOrder" />
+          <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+          <ScalarProperty Name="Cashiers_ID" ColumnName="Cashiers_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BreedOfPet">
+      <EntityTypeMapping TypeName="PetShopYP5Model.BreedOfPet">
+        <MappingFragment StoreEntitySet="BreedOfPet">
+          <ScalarProperty Name="ID_BreedOfPet" ColumnName="ID_BreedOfPet" />
+          <ScalarProperty Name="NameOfBreed" ColumnName="NameOfBreed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cashiers">
+      <EntityTypeMapping TypeName="PetShopYP5Model.Cashiers">
+        <MappingFragment StoreEntitySet="Cashiers">
+          <ScalarProperty Name="ID_Cahiers" ColumnName="ID_Cahiers" />
+          <ScalarProperty Name="CashSurname" ColumnName="CashSurname" />
+          <ScalarProperty Name="CashName" ColumnName="CashName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="ID_LoginPassword" ColumnName="ID_LoginPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientCheck">
+      <EntityTypeMapping TypeName="PetShopYP5Model.ClientCheck">
+        <MappingFragment StoreEntitySet="ClientCheck">
+          <ScalarProperty Name="ID_ClientCheck" ColumnName="ID_ClientCheck" />
+          <ScalarProperty Name="NameOfThecheck" ColumnName="NameOfThecheck" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="PetShopYP5Model.Clients">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="ID_Clients" ColumnName="ID_Clients" />
+          <ScalarProperty Name="ClientSurname" ColumnName="ClientSurname" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="ClientMiddleName" ColumnName="ClientMiddleName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="ID_LoginPassword" ColumnName="ID_LoginPassword" />
+          <ScalarProperty Name="ClientCheck_ID" ColumnName="ClientCheck_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="PetShopYP5Model.Employees">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="ID_Employees" ColumnName="ID_Employees" />
+          <ScalarProperty Name="EmploSurname" ColumnName="EmploSurname" />
+          <ScalarProperty Name="EmploName" ColumnName="EmploName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="ServicesForPet_ID" ColumnName="ServicesForPet_ID" />
+          <ScalarProperty Name="ID_LoginPassword" ColumnName="ID_LoginPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodForPets">
+      <EntityTypeMapping TypeName="PetShopYP5Model.FoodForPets">
+        <MappingFragment StoreEntitySet="FoodForPets">
+          <ScalarProperty Name="ID_FoodForPets" ColumnName="ID_FoodForPets" />
+          <ScalarProperty Name="NameOfFood" ColumnName="NameOfFood" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginPassword">
+      <EntityTypeMapping TypeName="PetShopYP5Model.LoginPassword">
+        <MappingFragment StoreEntitySet="LoginPassword">
+          <ScalarProperty Name="ID_LoginPassword" ColumnName="ID_LoginPassword" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Passwordd" ColumnName="Passwordd" />
+          <ScalarProperty Name="Rolee_ID" ColumnName="Rolee_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NaimenovaniePetsa">
+      <EntityTypeMapping TypeName="PetShopYP5Model.NaimenovaniePetsa">
+        <MappingFragment StoreEntitySet="NaimenovaniePetsa">
+          <ScalarProperty Name="ID_Naimenovanie" ColumnName="ID_Naimenovanie" />
+          <ScalarProperty Name="Naimenovanie" ColumnName="Naimenovanie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="PetShopYP5Model.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="Pets_ID" ColumnName="Pets_ID" />
+          <ScalarProperty Name="Employees_ID" ColumnName="Employees_ID" />
+          <ScalarProperty Name="Toys_ID" ColumnName="Toys_ID" />
+          <ScalarProperty Name="FoodForPets_ID" ColumnName="FoodForPets_ID" />
+          <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+          <ScalarProperty Name="Bill_ID" ColumnName="Bill_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pets">
+      <EntityTypeMapping TypeName="PetShopYP5Model.Pets">
+        <MappingFragment StoreEntitySet="Pets">
+          <ScalarProperty Name="ID_Pets" ColumnName="ID_Pets" />
+          <ScalarProperty Name="PetName" ColumnName="PetName" />
+          <ScalarProperty Name="Documents" ColumnName="Documents" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="BreedOfPet_ID" ColumnName="BreedOfPet_ID" />
+          <ScalarProperty Name="Shelter_ID" ColumnName="Shelter_ID" />
+          <ScalarProperty Name="Naimenovanie_ID" ColumnName="Naimenovanie_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rolee">
+      <EntityTypeMapping TypeName="PetShopYP5Model.Rolee">
+        <MappingFragment StoreEntitySet="Rolee">
+          <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+          <ScalarProperty Name="NameOfRole" ColumnName="NameOfRole" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServicesForPet">
+      <EntityTypeMapping TypeName="PetShopYP5Model.ServicesForPet">
+        <MappingFragment StoreEntitySet="ServicesForPet">
+          <ScalarProperty Name="ID_ServicesForPet" ColumnName="ID_ServicesForPet" />
+          <ScalarProperty Name="NameOfServices" ColumnName="NameOfServices" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shelter">
+      <EntityTypeMapping TypeName="PetShopYP5Model.Shelter">
+        <MappingFragment StoreEntitySet="Shelter">
+          <ScalarProperty Name="ID_Shelter" ColumnName="ID_Shelter" />
+          <ScalarProperty Name="TownOfShelter" ColumnName="TownOfShelter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Statuses">
+      <EntityTypeMapping TypeName="PetShopYP5Model.Statuses">
+        <MappingFragment StoreEntitySet="Statuses">
+          <ScalarProperty Name="ID_Statuses" ColumnName="ID_Statuses" />
+          <ScalarProperty Name="NameOfStatus" ColumnName="NameOfStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Toys">
+      <EntityTypeMapping TypeName="PetShopYP5Model.Toys">
+        <MappingFragment StoreEntitySet="Toys">
+          <ScalarProperty Name="ID_Toys" ColumnName="ID_Toys" />
+          <ScalarProperty Name="NameOfTheToys" ColumnName="NameOfTheToys" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,65 @@
+﻿<Window x:Class="YP5.CLIENT"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YP5"
+        mc:Ignorable="d"
+        Title="CLIENT" Height="800" Width="1000">
+    <Grid Background="BlanchedAlmond">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="1" Background="BlanchedAlmond" IsReadOnly="True" AutoGenerateColumns="False" x:Name="datagrid1" SelectionChanged="datagrid1_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding NameOfFood}" Header="Наименование"/>
+                <DataGridTextColumn Binding="{Binding Price}" Header="Цена"/>
+            </DataGrid.Columns>
+            <ComboBox x:Name="combo1"/>
+        </DataGrid>
+        <DataGrid Grid.Row="2" Background="BlanchedAlmond" IsReadOnly="True" AutoGenerateColumns="False" x:Name="datagrid2" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding NameOfTheToys}" Header="Наименование"/>
+                <DataGridTextColumn Binding="{Binding Price}" Header="Цена"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Grid.Row="3" Background="BlanchedAlmond" IsReadOnly="True" AutoGenerateColumns="False" x:Name="datagrid3" Margin="0,32,0,0" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding NameOfServices}" Header="Наименование"/>
+                <DataGridTextColumn Binding="{Binding Price}" Header="Цена"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Grid.Row="5" Background="BlanchedAlmond" IsReadOnly="True" AutoGenerateColumns="False" x:Name="datagrid4">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding PetName}" Header="Наименование"/>
+                <DataGridTextColumn Binding="{Binding Price}" Header="Цена"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Grid.Column="2" Grid.Row="1" Grid.RowSpan="4" Background="BlanchedAlmond" IsReadOnly="True" AutoGenerateColumns="False" x:Name="datagridITOG">
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="Наименование"/>
+                <DataGridTextColumn Header="Цена"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Покупка" FontSize="25" Background="RosyBrown"/>
+        <Button Content="Чеки" FontSize="25" Background="RosyBrown" Grid.Column="2"/>
+        <Button Content="+" FontSize="25" Background="MediumTurquoise" Grid.Column="1" Grid.Row="2" Click="Button_Click" />
+        <Button Content="-" FontSize="25" Background="MediumTurquoise" Grid.Column="1" Grid.Row="4"/>
+        <Button Content="Выгрузить чек" FontSize="20" Background="RosyBrown" Grid.Row="7" Grid.ColumnSpan="3"/>
+        <TextBox  Grid.Row="6" Grid.ColumnSpan="3" Background="Orchid"/>
+        <TextBlock x:Name="cena" Grid.Column="3" Grid.Row="5"/>
+
+    </Grid>
+</Window>

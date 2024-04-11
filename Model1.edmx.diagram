@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4a49e8c93fef428a9994b782df9c76c5" Name="Diagram1">
+        <EntityTypeShape EntityType="PetShopYP5Model.Bill" Width="1.5" PointX="7.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.BreedOfPet" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.Cashiers" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.ClientCheck" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.Clients" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.Employees" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.FoodForPets" Width="1.5" PointX="7.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.LoginPassword" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.NaimenovaniePetsa" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.Orders" Width="1.5" PointX="9.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.Pets" Width="1.5" PointX="7.5" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.Rolee" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.ServicesForPet" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.Shelter" Width="1.5" PointX="5.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.Statuses" Width="1.5" PointX="7.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShopYP5Model.Toys" Width="1.5" PointX="7.5" PointY="19.75" IsExpanded="true" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Bill__Cashiers_I__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Bill__Client_ID__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Orders__Bill_ID__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Pets__BreedOfPet__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Cashiers__ID_Log__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Clients__ClientC__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Clients__ID_Logi__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Employees__ID_Lo__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Employees__Servi__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Orders__Employee__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Orders__FoodForP__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__LoginPass__Rolee__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Pets__Naimenovan__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Orders__Pets_ID__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Orders__Status_I__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Orders__Toys_ID__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShopYP5Model.FK__Pets__Shelter_ID__5535A963" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

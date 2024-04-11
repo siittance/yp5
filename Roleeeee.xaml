@@ -1,0 +1,37 @@
+﻿<Window x:Class="YP5.Roleeeee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YP5"
+        mc:Ignorable="d"
+        Title="Roleeeee" Height="450" Width="800">
+    <Grid Background="BlanchedAlmond">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.RowSpan="7" x:Name="TableSS" IsReadOnly="True" Background="BlanchedAlmond" SelectionChanged="TableSS_SelectionChanged" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding NameOfRole}" Header="Наименование роли"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Column="4" Content="Выход" Click="Button_Click"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Введите название роли:" VerticalAlignment="Center" FontSize="15" TextWrapping="Wrap"/>
+        <TextBox Grid.Column="2" Grid.Row="3" x:Name="ReadDannie" TextChanged="ReadDannie_TextChanged" PreviewTextInput="ReadDannie_PreviewTextInput"/>
+        <Button Grid.Column="3" Grid.Row="2" Content="Добавить" Click="Button_Click_1" Height="40"  VerticalAlignment="Top"/>
+        <Button Grid.Column="3" Grid.Row="3" Content="Изменить" Click="Button_Click_2"/>
+        <Button Grid.Column="3" Grid.Row="4" Content="Удалить" Click="Button_Click_3"/>
+    </Grid>
+</Window>

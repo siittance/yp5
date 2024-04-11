@@ -1,0 +1,20 @@
+﻿<Window x:Class="YP5.VtorayaRol"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YP5"
+        mc:Ignorable="d"
+        Title="VtorayaRol" Height="540" Width="400">
+    <Grid Background="LightGreen">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Вы зашли, как клиент!" TextWrapping="Wrap" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ComboBox x:Name="tableComboBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="30" SelectionChanged="TableComboBox_SelectionChanged" Grid.Row="1"/>
+        <Button Grid.Row="3" Width="150" HorizontalAlignment="Right" Content="Выход" Click="Button_Click"  FontSize="15"/>
+    </Grid>
+</Window>

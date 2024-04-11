@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PetShopYP5Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="ID_Bill" />
+    </Key>
+    <Property Name="ID_Bill" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNumber" Type="Int32" Nullable="false" />
+    <Property Name="DateOrder" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Client_ID" Type="Int32" Nullable="false" />
+    <Property Name="Cashiers_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cashiers" Relationship="Self.FK__Bill__Cashiers_I__6C190EBB" FromRole="Bill" ToRole="Cashiers" />
+    <NavigationProperty Name="Clients" Relationship="Self.FK__Bill__Client_ID__6B24EA82" FromRole="Bill" ToRole="Clients" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Bill_ID__73BA3083" FromRole="Bill" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="BreedOfPet">
+    <Key>
+      <PropertyRef Name="ID_BreedOfPet" />
+    </Key>
+    <Property Name="ID_BreedOfPet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameOfBreed" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Pets" Relationship="Self.FK__Pets__BreedOfPet__5441852A" FromRole="BreedOfPet" ToRole="Pets" />
+  </EntityType>
+  <EntityType Name="Cashiers">
+    <Key>
+      <PropertyRef Name="ID_Cahiers" />
+    </Key>
+    <Property Name="ID_Cahiers" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CashSurname" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CashName" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ID_LoginPassword" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK__Bill__Cashiers_I__6C190EBB" FromRole="Cashiers" ToRole="Bill" />
+    <NavigationProperty Name="LoginPassword" Relationship="Self.FK__Cashiers__ID_Log__6754599E" FromRole="Cashiers" ToRole="LoginPassword" />
+  </EntityType>
+  <EntityType Name="ClientCheck">
+    <Key>
+      <PropertyRef Name="ID_ClientCheck" />
+    </Key>
+    <Property Name="ID_ClientCheck" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameOfThecheck" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Clients" Relationship="Self.FK__Clients__ClientC__5BE2A6F2" FromRole="ClientCheck" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="ID_Clients" />
+    </Key>
+    <Property Name="ID_Clients" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientSurname" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ClientName" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ClientMiddleName" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ID_LoginPassword" Type="Int32" Nullable="false" />
+    <Property Name="ClientCheck_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK__Bill__Client_ID__6B24EA82" FromRole="Clients" ToRole="Bill" />
+    <NavigationProperty Name="ClientCheck" Relationship="Self.FK__Clients__ClientC__5BE2A6F2" FromRole="Clients" ToRole="ClientCheck" />
+    <NavigationProperty Name="LoginPassword" Relationship="Self.FK__Clients__ID_Logi__5CD6CB2B" FromRole="Clients" ToRole="LoginPassword" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="ID_Employees" />
+    </Key>
+    <Property Name="ID_Employees" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmploSurname" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="EmploName" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ServicesForPet_ID" Type="Int32" Nullable="false" />
+    <Property Name="ID_LoginPassword" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="LoginPassword" Relationship="Self.FK__Employees__ID_Lo__628FA481" FromRole="Employees" ToRole="LoginPassword" />
+    <NavigationProperty Name="ServicesForPet" Relationship="Self.FK__Employees__Servi__619B8048" FromRole="Employees" ToRole="ServicesForPet" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Employee__6FE99F9F" FromRole="Employees" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="FoodForPets">
+    <Key>
+      <PropertyRef Name="ID_FoodForPets" />
+    </Key>
+    <Property Name="ID_FoodForPets" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameOfFood" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__FoodForP__71D1E811" FromRole="FoodForPets" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="LoginPassword">
+    <Key>
+      <PropertyRef Name="ID_LoginPassword" />
+    </Key>
+    <Property Name="ID_LoginPassword" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Passwordd" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Rolee_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cashiers" Relationship="Self.FK__Cashiers__ID_Log__6754599E" FromRole="LoginPassword" ToRole="Cashiers" />
+    <NavigationProperty Name="Clients" Relationship="Self.FK__Clients__ID_Logi__5CD6CB2B" FromRole="LoginPassword" ToRole="Clients" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK__Employees__ID_Lo__628FA481" FromRole="LoginPassword" ToRole="Employees" />
+    <NavigationProperty Name="Rolee" Relationship="Self.FK__LoginPass__Rolee__3E52440B" FromRole="LoginPassword" ToRole="Rolee" />
+  </EntityType>
+  <EntityType Name="NaimenovaniePetsa">
+    <Key>
+      <PropertyRef Name="ID_Naimenovanie" />
+    </Key>
+    <Property Name="ID_Naimenovanie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naimenovanie" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Pets" Relationship="Self.FK__Pets__Naimenovan__5629CD9C" FromRole="NaimenovaniePetsa" ToRole="Pets" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="ID_Order" />
+    </Key>
+    <Property Name="ID_Order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Pets_ID" Type="Int32" Nullable="false" />
+    <Property Name="Employees_ID" Type="Int32" Nullable="false" />
+    <Property Name="Toys_ID" Type="Int32" Nullable="false" />
+    <Property Name="FoodForPets_ID" Type="Int32" Nullable="false" />
+    <Property Name="Status_ID" Type="Int32" Nullable="false" />
+    <Property Name="Bill_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK__Orders__Bill_ID__73BA3083" FromRole="Orders" ToRole="Bill" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK__Orders__Employee__6FE99F9F" FromRole="Orders" ToRole="Employees" />
+    <NavigationProperty Name="FoodForPets" Relationship="Self.FK__Orders__FoodForP__71D1E811" FromRole="Orders" ToRole="FoodForPets" />
+    <NavigationProperty Name="Pets" Relationship="Self.FK__Orders__Pets_ID__6EF57B66" FromRole="Orders" ToRole="Pets" />
+    <NavigationProperty Name="Statuses" Relationship="Self.FK__Orders__Status_I__72C60C4A" FromRole="Orders" ToRole="Statuses" />
+    <NavigationProperty Name="Toys" Relationship="Self.FK__Orders__Toys_ID__70DDC3D8" FromRole="Orders" ToRole="Toys" />
+  </EntityType>
+  <EntityType Name="Pets">
+    <Key>
+      <PropertyRef Name="ID_Pets" />
+    </Key>
+    <Property Name="ID_Pets" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PetName" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="Documents" Type="Boolean" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="BreedOfPet_ID" Type="Int32" Nullable="false" />
+    <Property Name="Shelter_ID" Type="Int32" Nullable="false" />
+    <Property Name="Naimenovanie_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BreedOfPet" Relationship="Self.FK__Pets__BreedOfPet__5441852A" FromRole="Pets" ToRole="BreedOfPet" />
+    <NavigationProperty Name="NaimenovaniePetsa" Relationship="Self.FK__Pets__Naimenovan__5629CD9C" FromRole="Pets" ToRole="NaimenovaniePetsa" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Pets_ID__6EF57B66" FromRole="Pets" ToRole="Orders" />
+    <NavigationProperty Name="Shelter" Relationship="Self.FK__Pets__Shelter_ID__5535A963" FromRole="Pets" ToRole="Shelter" />
+  </EntityType>
+  <EntityType Name="Rolee">
+    <Key>
+      <PropertyRef Name="ID_Role" />
+    </Key>
+    <Property Name="ID_Role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameOfRole" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="LoginPassword" Relationship="Self.FK__LoginPass__Rolee__3E52440B" FromRole="Rolee" ToRole="LoginPassword" />
+  </EntityType>
+  <EntityType Name="ServicesForPet">
+    <Key>
+      <PropertyRef Name="ID_ServicesForPet" />
+    </Key>
+    <Property Name="ID_ServicesForPet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameOfServices" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK__Employees__Servi__619B8048" FromRole="ServicesForPet" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="Shelter">
+    <Key>
+      <PropertyRef Name="ID_Shelter" />
+    </Key>
+    <Property Name="ID_Shelter" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TownOfShelter" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Pets" Relationship="Self.FK__Pets__Shelter_ID__5535A963" FromRole="Shelter" ToRole="Pets" />
+  </EntityType>
+  <EntityType Name="Statuses">
+    <Key>
+      <PropertyRef Name="ID_Statuses" />
+    </Key>
+    <Property Name="ID_Statuses" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameOfStatus" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Status_I__72C60C4A" FromRole="Statuses" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Toys">
+    <Key>
+      <PropertyRef Name="ID_Toys" />
+    </Key>
+    <Property Name="ID_Toys" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameOfTheToys" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Toys_ID__70DDC3D8" FromRole="Toys" ToRole="Orders" />
+  </EntityType>
+  <Association Name="FK__Bill__Cashiers_I__6C190EBB">
+    <End Role="Cashiers" Type="Self.Cashiers" Multiplicity="1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cashiers">
+        <PropertyRef Name="ID_Cahiers" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="Cashiers_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bill__Client_ID__6B24EA82">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="ID_Clients" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="Client_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Bill_ID__73BA3083">
+    <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="ID_Bill" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Bill_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pets__BreedOfPet__5441852A">
+    <End Role="BreedOfPet" Type="Self.BreedOfPet" Multiplicity="1" />
+    <End Role="Pets" Type="Self.Pets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BreedOfPet">
+        <PropertyRef Name="ID_BreedOfPet" />
+      </Principal>
+      <Dependent Role="Pets">
+        <PropertyRef Name="BreedOfPet_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cashiers__ID_Log__6754599E">
+    <End Role="LoginPassword" Type="Self.LoginPassword" Multiplicity="1" />
+    <End Role="Cashiers" Type="Self.Cashiers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoginPassword">
+        <PropertyRef Name="ID_LoginPassword" />
+      </Principal>
+      <Dependent Role="Cashiers">
+        <PropertyRef Name="ID_LoginPassword" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Clients__ClientC__5BE2A6F2">
+    <End Role="ClientCheck" Type="Self.ClientCheck" Multiplicity="1" />
+    <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientCheck">
+        <PropertyRef Name="ID_ClientCheck" />
+      </Principal>
+      <Dependent Role="Clients">
+        <PropertyRef Name="ClientCheck_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Clients__ID_Logi__5CD6CB2B">
+    <End Role="LoginPassword" Type="Self.LoginPassword" Multiplicity="1" />
+    <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoginPassword">
+        <PropertyRef Name="ID_LoginPassword" />
+      </Principal>
+      <Dependent Role="Clients">
+        <PropertyRef Name="ID_LoginPassword" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employees__ID_Lo__628FA481">
+    <End Role="LoginPassword" Type="Self.LoginPassword" Multiplicity="1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoginPassword">
+        <PropertyRef Name="ID_LoginPassword" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="ID_LoginPassword" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employees__Servi__619B8048">
+    <End Role="ServicesForPet" Type="Self.ServicesForPet" Multiplicity="1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServicesForPet">
+        <PropertyRef Name="ID_ServicesForPet" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="ServicesForPet_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Employee__6FE99F9F">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="ID_Employees" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Employees_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__FoodForP__71D1E811">
+    <End Role="FoodForPets" Type="Self.FoodForPets" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodForPets">
+        <PropertyRef Name="ID_FoodForPets" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="FoodForPets_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoginPass__Rolee__3E52440B">
+    <End Role="Rolee" Type="Self.Rolee" Multiplicity="1" />
+    <End Role="LoginPassword" Type="Self.LoginPassword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rolee">
+        <PropertyRef Name="ID_Role" />
+      </Principal>
+      <Dependent Role="LoginPassword">
+        <PropertyRef Name="Rolee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pets__Naimenovan__5629CD9C">
+    <End Role="NaimenovaniePetsa" Type="Self.NaimenovaniePetsa" Multiplicity="1" />
+    <End Role="Pets" Type="Self.Pets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NaimenovaniePetsa">
+        <PropertyRef Name="ID_Naimenovanie" />
+      </Principal>
+      <Dependent Role="Pets">
+        <PropertyRef Name="Naimenovanie_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Pets_ID__6EF57B66">
+    <End Role="Pets" Type="Self.Pets" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pets">
+        <PropertyRef Name="ID_Pets" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Pets_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Status_I__72C60C4A">
+    <End Role="Statuses" Type="Self.Statuses" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statuses">
+        <PropertyRef Name="ID_Statuses" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Status_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Toys_ID__70DDC3D8">
+    <End Role="Toys" Type="Self.Toys" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Toys">
+        <PropertyRef Name="ID_Toys" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Toys_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pets__Shelter_ID__5535A963">
+    <End Role="Shelter" Type="Self.Shelter" Multiplicity="1" />
+    <End Role="Pets" Type="Self.Pets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shelter">
+        <PropertyRef Name="ID_Shelter" />
+      </Principal>
+      <Dependent Role="Pets">
+        <PropertyRef Name="Shelter_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PetShopYP5Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bill" EntityType="Self.Bill" />
+    <EntitySet Name="BreedOfPet" EntityType="Self.BreedOfPet" />
+    <EntitySet Name="Cashiers" EntityType="Self.Cashiers" />
+    <EntitySet Name="ClientCheck" EntityType="Self.ClientCheck" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" />
+    <EntitySet Name="FoodForPets" EntityType="Self.FoodForPets" />
+    <EntitySet Name="LoginPassword" EntityType="Self.LoginPassword" />
+    <EntitySet Name="NaimenovaniePetsa" EntityType="Self.NaimenovaniePetsa" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" />
+    <EntitySet Name="Pets" EntityType="Self.Pets" />
+    <EntitySet Name="Rolee" EntityType="Self.Rolee" />
+    <EntitySet Name="ServicesForPet" EntityType="Self.ServicesForPet" />
+    <EntitySet Name="Shelter" EntityType="Self.Shelter" />
+    <EntitySet Name="Statuses" EntityType="Self.Statuses" />
+    <EntitySet Name="Toys" EntityType="Self.Toys" />
+    <AssociationSet Name="FK__Bill__Cashiers_I__6C190EBB" Association="Self.FK__Bill__Cashiers_I__6C190EBB">
+      <End Role="Cashiers" EntitySet="Cashiers" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bill__Client_ID__6B24EA82" Association="Self.FK__Bill__Client_ID__6B24EA82">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Bill_ID__73BA3083" Association="Self.FK__Orders__Bill_ID__73BA3083">
+      <End Role="Bill" EntitySet="Bill" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pets__BreedOfPet__5441852A" Association="Self.FK__Pets__BreedOfPet__5441852A">
+      <End Role="BreedOfPet" EntitySet="BreedOfPet" />
+      <End Role="Pets" EntitySet="Pets" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cashiers__ID_Log__6754599E" Association="Self.FK__Cashiers__ID_Log__6754599E">
+      <End Role="LoginPassword" EntitySet="LoginPassword" />
+      <End Role="Cashiers" EntitySet="Cashiers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Clients__ClientC__5BE2A6F2" Association="Self.FK__Clients__ClientC__5BE2A6F2">
+      <End Role="ClientCheck" EntitySet="ClientCheck" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Clients__ID_Logi__5CD6CB2B" Association="Self.FK__Clients__ID_Logi__5CD6CB2B">
+      <End Role="LoginPassword" EntitySet="LoginPassword" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employees__ID_Lo__628FA481" Association="Self.FK__Employees__ID_Lo__628FA481">
+      <End Role="LoginPassword" EntitySet="LoginPassword" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employees__Servi__619B8048" Association="Self.FK__Employees__Servi__619B8048">
+      <End Role="ServicesForPet" EntitySet="ServicesForPet" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Employee__6FE99F9F" Association="Self.FK__Orders__Employee__6FE99F9F">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__FoodForP__71D1E811" Association="Self.FK__Orders__FoodForP__71D1E811">
+      <End Role="FoodForPets" EntitySet="FoodForPets" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoginPass__Rolee__3E52440B" Association="Self.FK__LoginPass__Rolee__3E52440B">
+      <End Role="Rolee" EntitySet="Rolee" />
+      <End Role="LoginPassword" EntitySet="LoginPassword" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pets__Naimenovan__5629CD9C" Association="Self.FK__Pets__Naimenovan__5629CD9C">
+      <End Role="NaimenovaniePetsa" EntitySet="NaimenovaniePetsa" />
+      <End Role="Pets" EntitySet="Pets" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Pets_ID__6EF57B66" Association="Self.FK__Orders__Pets_ID__6EF57B66">
+      <End Role="Pets" EntitySet="Pets" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Status_I__72C60C4A" Association="Self.FK__Orders__Status_I__72C60C4A">
+      <End Role="Statuses" EntitySet="Statuses" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Toys_ID__70DDC3D8" Association="Self.FK__Orders__Toys_ID__70DDC3D8">
+      <End Role="Toys" EntitySet="Toys" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pets__Shelter_ID__5535A963" Association="Self.FK__Pets__Shelter_ID__5535A963">
+      <End Role="Shelter" EntitySet="Shelter" />
+      <End Role="Pets" EntitySet="Pets" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
