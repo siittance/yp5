@@ -81,16 +81,7 @@ namespace YP5
                 textBox.Select(textBox.Text.Length, 0);
             }
         }
-        private bool IsEmailValid(string email)
-        {
-            string pattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
-
-            if (Regex.IsMatch(email, pattern))
-            {
-                return true;
-            }
-            return false; 
-        }
+        
         private void ReadDannie3_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
@@ -363,7 +354,16 @@ namespace YP5
         {
             
         }
+        private bool IsEmailValid(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
 
+            if (Regex.IsMatch(email, pattern))
+            {
+                return true;
+            }
+            return false;
+        }
         private void ReadDannie3_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;

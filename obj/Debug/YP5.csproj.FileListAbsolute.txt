@@ -17,7 +17,6 @@ C:\Users\Administrator\source\repos\YP5\YP5\obj\Debug\YP5.g.resources
 C:\Users\Administrator\source\repos\YP5\YP5\obj\Debug\YP5.Properties.Resources.resources
 C:\Users\Administrator\source\repos\YP5\YP5\obj\Debug\YP5.csproj.GenerateResource.cache
 C:\Users\Administrator\source\repos\YP5\YP5\obj\Debug\YP5.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\source\repos\YP5\YP5\obj\Debug\YP5.csproj.CopyComplete
 C:\Users\Administrator\source\repos\YP5\YP5\obj\Debug\YP5.exe
 C:\Users\Administrator\source\repos\YP5\YP5\obj\Debug\YP5.pdb
 C:\Users\Administrator\source\repos\YP5\YP5\obj\Debug\Admin.g.cs
@@ -73,3 +72,12 @@ C:\Users\Administrator\source\repos\YP5\YP5\obj\Debug\VtorayaRoleIgrushi.g.cs
 C:\Users\Administrator\source\repos\YP5\YP5\obj\Debug\VtorayaRoleIgrushi.baml
 C:\Users\Administrator\source\repos\YP5\YP5\obj\Debug\Popitka2.g.cs
 C:\Users\Administrator\source\repos\YP5\YP5\obj\Debug\Popitka2.baml
+C:\Users\Administrator\source\repos\YP5\YP5\bin\Debug\MaterialDesignColors.dll
+C:\Users\Administrator\source\repos\YP5\YP5\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Administrator\source\repos\YP5\YP5\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Administrator\source\repos\YP5\YP5\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Administrator\source\repos\YP5\YP5\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Administrator\source\repos\YP5\YP5\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Administrator\source\repos\YP5\YP5\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Administrator\source\repos\YP5\YP5\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\Administrator\source\repos\YP5\YP5\obj\Debug\YP5.csproj.Up2Date

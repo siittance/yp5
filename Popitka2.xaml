@@ -22,9 +22,9 @@
                 <DataGridTextColumn Binding="{Binding NaimenovaniePetsa.Naimenovanie}" Header="Наименование"/>
             </DataGrid.Columns>
         </DataGrid>
-        <ComboBox x:Name="Combo1" Opacity="0" Margin="0,434,0,0"/>
-        <ComboBox x:Name="Combo2" Opacity="0" Height="0" Margin="0,434,0,0"/>
-        <ComboBox x:Name="Combo3" Opacity="0" Margin="0,434,0,0"/>
+        <ComboBox x:Name="Combo1" Opacity="0" Margin="0,434,0,0" Height="0" Width="0"/>
+        <ComboBox x:Name="Combo2" Opacity="0" Margin="0,434,0,0" Height="0" Width="0"/>
+        <ComboBox x:Name="Combo3" Opacity="0" Margin="0,434,0,0" Height="0" Width="0"/>
         <Button Grid.Column="4" Content="Выход" Click="Button_Click" Background="LightSeaGreen"/>
     </Grid>
 </Window>
